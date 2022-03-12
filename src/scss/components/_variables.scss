@@ -1,0 +1,108 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//
+// --------------------------------------------------
+$white: #fff !default;
+$black: #000 !default;
+$gray-darker: lighten($black, 13.5%) !default; // #222
+$gray-dark: lighten($black, 20%) !default; // #333
+$gray: lighten($black, 33.5%) !default; // #555
+$gray-light: lighten($black, 46.7%) !default; // #777
+$gray-lighter: lighten($black, 93.5%) !default; // #eee
+
+$brand-primary: #02474f !default;
+$brand: #489889 !default;
+$brand-light: #dfedeb !default;
+$brand-noteworthy: #f5dcb2 !default;
+$yellow: #f2dab1;
+$white-dark: #d9d9d9;
+$light-green: #c2ddd8;
+$red_1: #ee3123;
+$red_2: #ef5573;
+$red_3: #f27062;
+$blue_1: #0076bd;
+$blue_2: #001541;
+$blue_3: #6499c7;
+$blue_4: #51b8e9;
+$violet_1: #8769ae;
+$green_1: #64b95f;
+$green_2: #468074;
+$green_3: #79c79a;
+$green_4: #b9d981;
+$green_5: #b4a210;
+$yellow: #fcb61a;
+$orange: #f7901d;
+$black_2: #212426;
+$white_tr: rgba(255,255,255,.1);
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg: #fff !default;
+//** Global text color on `<body>`.
+$text-color: $gray-darker !default;
+
+//** Global textual link color.
+$link-color: $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color: darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-base: "Poppins", sans-serif !default;
+
+$font-size-base: 1.4rem !default;
+$font-size-large: 1.6rem !default;
+$font-size-small: 1.2rem !default;
+
+$font-size-h1: 3.6rem !default;
+$font-size-h2: 2.4rem !default;
+$font-size-h3: 1.8rem !default;
+$font-size-h4: 1.6rem !default;
+$font-size-h5: $font-size-base !default;
+$font-size-h6: 1.2rem !default;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family-dinot: $font-family-base !default;
+$headings-font-family: $font-family-base !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+$headings-font-family-gotham: $font-family-base !default;
+//== Screen size
+$container_width: 1424px;
+$grid-breakpoints: (
+  xs: 0,
+  xsm: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xlg: 1181px,
+  xl: 1424px
+);
+$container-max-widths: (
+  xsm: 100%,
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xlg: 100%,
+  xl: 1392px
+);
+
+$xsm: 375px;
+$md: 768px;
+$notlg: 991px;
+$lg: 992px;
+$xlg: 1181px;
+$xl: 1424px;
+

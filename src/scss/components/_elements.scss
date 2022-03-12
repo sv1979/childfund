@@ -1,0 +1,247 @@
+.header {
+    position: relative;
+    z-index: 10;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
+    .header__menu, .header__signin, .header__tbb {
+        display: none;
+    }
+    .search_toggle, .mobile_menu_open, .mobile_menu_close {
+        @extend .reset_button_appearance;
+    }
+    .search_toggle {
+        display: inline-block;
+        background-color: transparent;
+        box-shadow: none;
+        width: 4rem;
+        height: 4rem;
+        background-image: url('../../images/icons/search_w.svg');
+        background-size: 3rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .header__search {
+        margin-left: auto;
+    }
+    .header__account {
+        margin-left: 1rem;
+    }
+    .mobile_menu_open {
+        background-color: transparent;
+        box-shadow: none;
+        margin-left: 1.5rem;
+    }
+    @include tablet {
+        .header__tbb {
+            display: flex;
+            margin-left: 1rem;
+        }
+        .mobile_menu_open {
+            margin-left: 2rem;
+        }
+    }
+    @include desktop {
+        .container {
+            padding: 1rem 2rem;
+        }
+        .mobile_menu_open {
+            display: none;
+        } 
+        .header__tbb {
+            display: flex;
+            margin-left: 1rem;
+        }
+        .header__signin  {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .header__menu {
+            display: flex;
+            color: white;
+        }
+        .header__homelink {
+            padding: 1rem 0 2rem;
+            img {
+                width: 18.5rem;
+            }
+        }
+    }
+}
+
+.header__menu {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        &.has_children.level_1 {
+            > a {
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 2rem;
+                    height: 2rem;
+                    margin-left: .5rem;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../../images/icons/chevron_down_w.svg');
+                }
+            }
+        }
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 500;
+        display: flex;
+    }
+    @include smaller-than-desktop {
+        animation-duration: 0.5s;
+        animation-name: show_menu;
+        padding: 16rem 0 2rem;
+        &.active {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+            background-color: $black_2;
+            color: white;
+            animation-direction: alternate;
+        }
+        .mobile_menu_close {
+            background-color: transparent;
+            position: absolute;
+            top: 3.5rem;
+            right: 2.5rem;
+        }
+        .level_1 {
+            display: block;
+            border-bottom: 1px solid $white_tr;
+            &:last-child {
+                border-bottom: none;
+            }
+            > a {
+                font-weight: 500;
+                font-size: 2.7rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &.has_children.active {
+                >a {
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        .has_children {
+            > ul {
+                display: none;
+            }
+            &.active {
+                ul {
+                    display: block;
+                }
+            }
+        }
+        li {
+            width: 100%;
+            display: block;
+            padding: 2rem 3rem 2rem 2rem;
+        }
+        .submenu_1, .submenu_2 {
+            li {
+                padding-left: 0;
+            }
+        }
+        .submenu_1 {
+            padding-top: 1rem;
+            > li {
+                padding: 1.5rem 2rem 1.5rem 0; 
+               > a {
+                   font-size: 1.8rem;
+                   font-weight: 600;
+                   font-feature-settings: 'ss02' on;
+               } 
+            }
+        }
+        .submenu_2 {
+            padding-top: 0.5rem;
+            > li {
+               padding: 1rem 2rem 1rem 0; 
+               > a {
+                   font-size: 1.4rem;
+                   font-weight: 400;
+                   font-feature-settings: 'ss02' on;
+               } 
+            }
+        }
+        .header_menu_buttons {
+            padding: 4rem 2rem;
+            .btn {
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    @include desktop {
+        .top_menu {
+            display: flex;
+            align-items: center;
+            margin-left: 3rem;
+            li {
+                padding: .5rem 1rem;
+            }
+            a {
+                white-space: nowrap;
+            }
+        }
+        .submenu_1, .submenu_2 {
+            display: none;
+        }
+        .header_menu_buttons {
+            display: none;
+        }
+    }
+}
+
+@keyframes show_menu {
+    from { max-height: 0; }
+    to { max-height: 200vh; }
+}
+
+.homepage_top {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-image: url("../../images/general/home_header.jpg");
+    margin-top: -10rem;
+    z-index: 1;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: -moz-linear-gradient(top, rgba(0,0,0,1) 0% , rgba(0,0,0,0) 24%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0% ,rgba(0,0,0,0) 24%);
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0% ,rgba(0,0,0,0) 24%);
+    }
+    @include desktop {
+        margin-top: -12rem;
+    }
+}

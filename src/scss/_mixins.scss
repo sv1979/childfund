@@ -1,0 +1,126 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absolute-cover {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin placeholder($color, $size: "") {
+    &::placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &::-webkit-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &:-moz-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &::-moz-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$md - 1px}) {
+        @content;
+    }
+}
+
+@mixin bigger-than-mobile {
+    @media (min-width: #{$md}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$md}) and (max-width: #{$xlg - 1px}) {
+        @content;
+    }
+}
+
+@mixin bigger-than-tablet {
+    @media (min-width: #{$xlg}) {
+        @content;
+    }
+}
+
+@mixin smaller-than-desktop {
+    @media (max-width: #{$xlg - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$xlg}) {
+        @content;
+    }
+}
+
+button {
+    background-color: transparent;
+}
+
+.reset_button_appearance {
+    appearance: none;
+    border: none;
+    padding: 0 0;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.sr--only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+@include tablet {
+    .hide_on_tablet {
+        display: none !important;
+    }
+}
+
+@include desktop {
+    .hide_on_desktop {
+        display: none !important;
+    }
+}

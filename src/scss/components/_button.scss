@@ -1,0 +1,133 @@
+.btn {
+    border: none;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1.9rem 2rem 2.1rem;
+    border-radius: 4rem;
+    transition: 0.2s ease-in-out;
+    font-family: $font-family-base;
+    font-size: $font-size-large;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    white-space: nowrap;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.28);
+    transform-origin: bottom;
+    &:hover,
+    &:focus,
+    &.focus {
+        opacity: 0.8;
+        box-shadow: none;
+        transform: scale(0.99);
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: no-drop;
+        background: #ababab;
+    }
+    &.no-shadow {
+        box-shadow: none;
+        &:hover,
+        &:focus,
+        &.focus {
+            opacity: 0.8;
+            box-shadow: none;
+            transform: none;
+        }
+    }
+}
+
+a.btn {
+    &.disabled,
+    fieldset[disabled] & {
+        pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-block+.btn-block {
+    margin-top: 0.5rem;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+
+.two_buttons_block {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    .tbb_button {
+        font-size: 1.6rem;
+        height: 5rem;
+        padding: 0 3rem;
+        display: flex;
+        font-weight: 600;
+        line-height: 1;
+        text-decoration: none;
+        align-items: center;
+        align-content: center;
+        &:first-child {
+            border-radius: 4rem 0 0 4rem;
+        }
+        &:last-child {
+            border-radius: 0 4rem 4rem 0;
+        }
+    }
+}
+
+.button_with_icon {
+    &::before {
+        content: '';
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 2.4rem;
+        height: 2.4rem;
+        display: inline-block;
+        margin-right: 0.7rem;
+    }
+    &.icon_heart {
+        &::before {
+            background-image: url('../../images/icons/heart_w.svg');
+        }
+    }
+}
+
+.button_white {
+    background-color: #fff;
+    color: $black_2;
+    &:hover {
+        background-color: #ddd;
+        color: $black_2;
+    }
+}
+
+.button_red {
+    background-color: $red_1;
+    color: white;
+    &:hover {
+        background-color: $red_2;
+        color: white;
+    }
+}
+
+.button_transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
