@@ -213,6 +213,70 @@
         .header_menu_buttons {
             display: none;
         }
+        .level_1.has_children.active {
+            position: relative;
+            .submenu_1, .submenu_2 {
+                display: block;
+                min-width: 24rem;
+                > li {
+                    padding: 0;
+                }
+            }
+            .submenu_1 {
+                position: absolute;
+                top: 140%;
+                left: 0;
+                background-color: $black_2;
+                border-radius: .8rem;
+                &.long_list {
+                    column-count: 2;
+                    column-gap: 0;
+                    column-rule: 1px solid $white_tr;
+                    > li {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: -.5rem;
+                    left: 6rem;
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-left: .5rem solid transparent;
+                    border-right: .5rem solid transparent;
+                    border-bottom: .5rem solid $black_2;
+                }
+                > li {
+                    border-bottom: 1px solid $white_tr;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                     > a {
+                         padding: 2rem 4rem;
+                         font-feature-settings: 'ss02' on;
+                    }
+                    &.has_children {
+                        > a {
+                            padding-bottom: 0.5rem;
+                        }
+                    }
+                }
+            }
+            .submenu_2 {
+                padding-bottom: 2rem;
+                > li {
+                    > a {
+                        padding: .3rem 4rem;
+                        font-weight: 400;
+                        font-size: 1.5rem;
+                        font-feature-settings: 'ss02' on;
+                    }
+                }
+            }
+        }
     }
 }
 
