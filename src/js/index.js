@@ -53,6 +53,7 @@ function initTopMenu() {
     const top_menu = $('.header__menu');
     const collapsible_menu_toggle = $('.level_1.has_children > a', top_menu);
     const top_menu_elements = $('.level_1 > a');
+    const header_container = $('.header .container');
 
     top_menu_toggle.on('click', () => {
         top_menu.toggleClass('active');
@@ -67,6 +68,11 @@ function initTopMenu() {
     })
 
     top_menu_elements.on('focus', () => {
+        const level_1_items = $('.level_1.active');
+        level_1_items.removeClass('active');
+    })
+
+    header_container.on('mouseleave', () => {
         const level_1_items = $('.level_1.active');
         level_1_items.removeClass('active');
     })

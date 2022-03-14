@@ -285,6 +285,66 @@
     to { max-height: 200vh; }
 }
 
+.footer {
+    border-top: 1px solid $black_tr;
+    padding: 5rem 2rem;
+    ul {
+        list-style: none;
+        padding: 0 0;
+        margin: 0 0;
+    }
+    .footer__menu_block {
+        text-align: center;
+        margin-bottom: 2rem;
+        a {
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    }
+    .footer__block_header {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $red;
+        margin: 0 0 2rem;
+    }
+    .social {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+                font-size: 0;
+                display: inline-block;
+                width: 3.5rem;
+                height: 3.5rem;
+                margin: 0 .5rem;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                &[href*='facebook'] {
+                    background-image: url('../../images/icons/facebook_b.svg');
+                }
+                &[href*='twitter'] {
+                    background-image: url('../../images/icons/twitter_b.svg');
+                }
+                &[href*='linkedin'] {
+                    background-image: url('../../images/icons/linkedin_b.svg');
+                }
+                &[href*='youtube'] {
+                    background-image: url('../../images/icons/youtube_b.svg');
+                }
+                &[href*='instagram'] {
+                    background-image: url('../../images/icons/instagram_b.svg');
+                }
+            }
+        }
+    }
+}
+
 .homepage_top {
     background-size: cover;
     background-position: center center;
