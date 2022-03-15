@@ -1,6 +1,22 @@
 .header {
     position: relative;
     z-index: 10;
+    background-color: #fff;
+    color: $black_2;
+    .level_1 {
+        > a {
+            color: white;
+            &::after {
+                background-image: url('../../images/icons/chevron_down_w.svg');
+            }
+        }
+    }
+    .img_white {
+        display: none;
+    }
+    .img_black {
+        display: inline;
+    }
     .container {
         display: flex;
         justify-content: space-between;
@@ -10,22 +26,30 @@
     .header__menu, .header__signin, .header__tbb {
         display: none;
     }
-    .search_toggle, .mobile_menu_open, .mobile_menu_close {
+    .search_open, .mobile_menu_open, .mobile_menu_close {
         @extend .reset_button_appearance;
     }
-    .search_toggle {
+    .search_open, .search_close {
         display: inline-block;
         background-color: transparent;
         box-shadow: none;
         width: 4rem;
         height: 4rem;
-        background-image: url('../../images/icons/search_w.svg');
         background-size: 3rem;
         background-repeat: no-repeat;
         background-position: center center;
     }
+    .search_open {
+        background-image: url('../../images/icons/search_b.svg');
+    }
+    .search_close {
+        background-image: url('../../images/icons/cross_b.svg');
+    }
     .header__search {
         margin-left: auto;
+    }
+    .header__signin {
+        color: $black_2;
     }
     .header__account {
         margin-left: 1rem;
@@ -35,6 +59,83 @@
         box-shadow: none;
         margin-left: 1.5rem;
     }
+    &.header-transparent {
+        background-color: transparent;
+        .header__homelink {
+            .logo_white {
+                display: inline;
+            }
+            .logo_black {
+                display: none;
+            }
+        }
+        .level_1 {
+            > a {
+                color: white;
+                &::after {
+                    background-image: url('../../images/icons/chevron_down_w.svg');
+                }
+            }
+        }
+        .search_open {
+            background-image: url('../../images/icons/search_w.svg');
+        }
+        .header__signin {
+            color: white;
+        }
+        .button_contrast {
+            background-color: white;
+            color: $black_2;
+            &:hover {
+                background-color: darken(white, 10%);
+                color: $black_2;
+            }
+        }
+        .img_white {
+            display: inline;
+        }
+        .img_black {
+            display: none;
+        }
+    }
+    .header__search_form {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 10;
+        min-height: 9.7rem;
+        .form_top {
+            padding: 2.8rem 2rem;
+            display: flex;
+            align-items: stretch;
+        }
+        [type="search"] {
+            flex: 1;
+            border: none;
+            font-size: 2rem;
+            margin-left: 1rem;
+        }
+        [type="submit"] {
+            flex: 0 0 3rem;
+            font-size: 0;
+            @extend .reset_button_appearance;
+            display: inline-block;
+            background-color: transparent;
+            box-shadow: none;
+            width: 4rem;
+            height: 4rem;
+            background-size: 3rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url('../../images/icons/search_b.svg');
+        }
+        &.active {
+            display: block;
+        }
+    }
     @include tablet {
         .header__tbb {
             display: flex;
@@ -43,8 +144,21 @@
         .mobile_menu_open {
             margin-left: 2rem;
         }
+        .header__search_form {
+            top: 100%;
+            left: 25%;
+            right: 25%;
+        }
     }
     @include desktop {
+        .level_1 {
+            > a {
+                color: $black_2;
+                &::after {
+                    background-image: url('../../images/icons/chevron_down_b.svg');
+                }
+            }
+        }
         .container {
             padding: 1rem 2rem;
         }
@@ -57,9 +171,9 @@
         }
         .header__signin  {
             display: block;
-            color: white;
             text-decoration: none;
             margin: 0 1rem;
+            font-weight: 500;
         }
         .header__menu {
             display: flex;
@@ -70,6 +184,11 @@
             img {
                 width: 18.5rem;
             }
+        }
+        .header__search_form {
+            top: 100%;
+            left: calc(50vw - 28rem);
+            right: calc(50vw - 28rem);
         }
     }
 }
@@ -91,7 +210,6 @@
                     margin-left: .5rem;
                     background-size: contain;
                     background-repeat: no-repeat;
-                    background-image: url('../../images/icons/chevron_down_w.svg');
                 }
             }
         }

@@ -54,6 +54,8 @@ function initTopMenu() {
     const collapsible_menu_toggle = $('.level_1.has_children > a', top_menu);
     const top_menu_elements = $('.level_1 > a');
     const header_container = $('.header .container');
+    const header__search_form = $('.header__search_form');
+    const header__search_toggle = $('.header__search_toggle');
 
     top_menu_toggle.on('click', () => {
         top_menu.toggleClass('active');
@@ -75,5 +77,12 @@ function initTopMenu() {
     header_container.on('mouseleave', () => {
         const level_1_items = $('.level_1.active');
         level_1_items.removeClass('active');
+    })
+
+    header__search_toggle.on('click', () => {
+        header__search_form.toggleClass('active');
+        if (header__search_form.hasClass('active')) {
+            $('[type="search"]', header__search_form).trigger('focus')
+        }
     })
 }

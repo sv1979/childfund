@@ -1,7 +1,8 @@
 <header class="header header-transparent">
     <div class="container">
         <a href="/" class="header__homelink">
-            <img src="../images/toplogo_white.svg">
+            <img src="../images/toplogo_white.svg" class="img_white">
+            <img src="../images/toplogo_black.svg" class="img_black">
         </a>
         <div class="header__menu">
             <button class="btn mobile_menu_close hide_on_desktop">
@@ -86,20 +87,32 @@
             </div>
         </div>
         <div class="header__search">
-            <button class="btn search_toggle">
+            <button class="btn header__search_toggle search_open">
                 <span class="sr--only">Search</span>
             </button>
+
+            <div class="header__search_form">
+                <div class="form_top">
+                    <input type="submit" />
+                    <input type="search" />
+                    <button class="btn header__search_toggle search_close">
+                        <span class="sr--only">Close</span>
+                    </button>
+                </div>
+            </div>
         </div>
         <a href="/" class="header__signin">Sign in</a>
         <a href="/" class="header__account">
-            <img src="../images/icons/user_w.svg">
+            <img src="../images/icons/user_w.svg" class="img_white">
+            <img src="../images/icons/user_b.svg" class="img_black">
         </a>
         <div class="header__tbb two_buttons_block">
-            <button class="tbb_button btn button_white">Sponsor a child</button>
+            <button class="tbb_button btn button_contrast">Sponsor a child</button>
             <a class="tbb_button button_red btn button_with_icon icon_heart">Donate</a>
         </div>
         <button class="btn mobile_menu_open">
-            <img src="../images/icons/hamburger_w.svg">
+            <img src="../images/icons/hamburger_w.svg" class="img_white">
+            <img src="../images/icons/hamburger_b.svg" class="img_black">
         </button>
     </div>
 </header>

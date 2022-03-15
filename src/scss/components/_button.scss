@@ -118,6 +118,15 @@ input[type="button"] {
     }
 }
 
+.button_contrast {
+    background-color: $black_2;
+    color: white;
+    &:hover {
+        background-color: darken($black_2, 10%);
+        color: white;
+    }
+}
+
 .button_red {
     background-color: $red_1;
     color: white;
