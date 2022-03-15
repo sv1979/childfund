@@ -113,6 +113,12 @@ button {
     white-space: nowrap !important;
 }
 
+@include mobile{
+    .hide_on_mobile {
+        display: none !important;
+    }
+}
+
 @include tablet {
     .hide_on_tablet {
         display: none !important;
